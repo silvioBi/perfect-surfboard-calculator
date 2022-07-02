@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {
-    Button,
+    Text,
     FormControl,
     FormLabel, Heading, NumberDecrementStepper,
     NumberIncrementStepper,
@@ -8,6 +8,7 @@ import {
     NumberInputField,
     NumberInputStepper,
     Select,
+    Tooltip,
     VStack
 } from "@chakra-ui/react";
 import {Age, FitnessLevel, SkillLevel, Surfboard} from "../../types/types";
@@ -23,6 +24,25 @@ type Props = {
     ) => void
 }
 
+const FITNESS_LEVEL_TOOLTIP_TEXT = <div>
+    <ul>
+        <li><b>poor:</b> surfing 1 times per week or other training 1 times per week</li>
+        <li><b>average:</b> surfing 2 times per week or other training 2 times per week</li>
+        <li><b>good:</b> surfing 3 times per week or other training 3 times per week</li>
+        <li><b>excellent:</b> surfing 4 times per week or other training 4 times per week</li>
+    </ul>
+</div>;
+
+const SKILL_LEVEL_TOOLTIP_TEXT = <div>
+    <ul>
+        <li><b>beginner:</b> first timers, learning to stand, focusing on their wave count</li>
+        <li><b>intermediate:</b> riders are progressive surfers capable of trimming the wave face. Developing their movements whilst completing half of the attempted moves. Catching roughly half or slightly more than half of your attempted waves</li>
+        <li><b>intermediate/advanced:</b> able to link moves whilst having confidence and understanding of each condition. Able to complete above average at 60-70% completion of each manoeuvre. catching 7/10 attempted waves</li>
+        <li><b>advanced:</b> able to complete complex manoeuvres with confidence, control, and consistency. Whilst completing 70-80% of attempted manoeuvres, and catching 8 out of 10 attempted waves</li>
+        <li><b>pro:</b> you’re a borderline pro, a strong, fit rider capable of making critical manoeuvres with total control, power, and speed. Averaging an 80 - 90% completion rate and catch 9 out of 10 waves you paddle for</li>
+    </ul>
+</div>;
+
 export default ({handleChange}: Props) => {
     const {
         age: ageLocalStorage,
@@ -32,8 +52,6 @@ export default ({handleChange}: Props) => {
         skillLevel: skillLevelLocalStorage,
         waveHeight: waveHeightLocalStorage,
     } = JSON.parse(window.localStorage.getItem('SURFBOARD_CALCULATOR_STATE') ?? '') ?? {};
-    console.log(JSON.parse(window.localStorage.getItem('SURFBOARD_CALCULATOR_STATE') ?? ''))
-
 
     const [age, setAge] = React.useState<Age>(ageLocalStorage ?? Age.FROM_TWENTY_TILL_TWENTYNINE)
 
@@ -84,7 +102,7 @@ export default ({handleChange}: Props) => {
                 </FormControl>
 
                 <FormControl>
-                    <FormLabel htmlFor='height'>📏 How tall are you (cm)?</FormLabel>
+                    <FormLabel htmlFor='height'>📏 How tall are you?</FormLabel>
                     <NumberInput
                         onChange={(valueString) => valueString ? setHeight(parseHeightString(valueString)) : null}
                         value={formatHeight(height)}
@@ -99,7 +117,7 @@ export default ({handleChange}: Props) => {
                 </FormControl>
 
                 <FormControl>
-                    <FormLabel htmlFor='weight'>🐋 What's your weight (kg)?</FormLabel>
+                    <FormLabel htmlFor='weight'>🐋 What's your weight?</FormLabel>
                     <NumberInput
                         onChange={(valueString) => valueString ? setWeight(parseWeightString(valueString)) : null}
                         value={formatWeight(weight)}
@@ -114,7 +132,12 @@ export default ({handleChange}: Props) => {
                 </FormControl>
 
                 <FormControl>
-                    <FormLabel htmlFor='fitnessLevel'>🏋🏼 What's your fitness level?</FormLabel>
+                    <FormLabel htmlFor='fitnessLevel'>
+                        🏋🏼 What's your fitness level?
+                        <Tooltip fontSize='xs' label={FITNESS_LEVEL_TOOLTIP_TEXT} aria-label='A tooltip'>
+                            &nbsp;ℹ️
+                        </Tooltip>
+                    </FormLabel>
                     <Select id='fitnessLevel' value={fitnessLevel}
                             onChange={(event) => setFitnessLevel(event.target.value as FitnessLevel)}>
                         <option value={FitnessLevel.POOR}>{FitnessLevel.POOR}</option>
@@ -126,7 +149,12 @@ export default ({handleChange}: Props) => {
 
 
                 <FormControl>
-                    <FormLabel htmlFor='skillLevel'>🏄🏼‍ How good are you at surfing?</FormLabel>
+                    <FormLabel htmlFor='skillLevel'>
+                        🏄🏼‍ How good are you at surfing?
+                        <Tooltip placement='top' fontSize='xs' label={SKILL_LEVEL_TOOLTIP_TEXT} aria-label='A tooltip'>
+                            &nbsp;ℹ️
+                        </Tooltip>
+                    </FormLabel>
                     <Select id='skillLevel' value={skillLevel}
                             onChange={(event) => setSkillLevel(event.target.value as SkillLevel)}>
                         <option value={SkillLevel.BEGINNER}>{SkillLevel.BEGINNER}</option>
@@ -138,7 +166,7 @@ export default ({handleChange}: Props) => {
                 </FormControl>
 
                 <FormControl pb={4}>
-                    <FormLabel htmlFor='height'>🌊 How big are the waves you will ride (cm)?</FormLabel>
+                    <FormLabel htmlFor='height'>🌊 How big are the waves you will ride?</FormLabel>
                     <NumberInput
                         onChange={(valueString) => valueString ? setWaveHeight(parseHeightString(valueString)) : null}
                         value={formatHeight(waveHeight)}

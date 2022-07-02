@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import {Badge, Button, Text, Flex, Heading, VStack} from '@chakra-ui/react';
+import {Badge, Button, Text, Flex, Heading, VStack, Tooltip} from '@chakra-ui/react';
 import CalculatorForm from "../calculatorForm/CalculatorForm";
 import {Age, FitnessLevel, SkillLevel, Surfboard} from "../../types/types";
 import {calculatePerfectBoards} from "../../helpers/boardCalculator";
 import SurfboardsExpo from "../surfboardsExpo/SurfboardsExpo";
 import Footer from "../footer/Footer";
+
+const showSurfboardsButtonText = 'Unfortunately we could not find any surfboard matching your criteria, change the values and try again and if you think is an error please drop me a email: biasiol.silvio@gmail.com'
 
 function App() {
     const [surfboards, setSurfboards] = useState<Surfboard[]>([]);
@@ -30,18 +32,20 @@ function App() {
             wrap='nowrap'
             height='100vh'
         >
-            <VStack padding={2}>
+            <VStack padding={4}>
                 {!expoVisible &&
                     <CalculatorForm handleChange={handleChange}/>
                 }
                 {!expoVisible &&
-                    <Button
-                        disabled={surfboards.length === 0}
-                        onClick={() => setExpoVisible(true)}
-                    >
-                        <Badge colorScheme='purple'>{surfboards.length}</Badge>
-                        <Text pl='2'>surfboards compatible with you</Text>
-                    </Button>
+                    <Tooltip placement='top' shouldWrapChildren label={showSurfboardsButtonText} isDisabled={surfboards.length > 0}>
+                        <Button
+                            disabled={surfboards.length === 0}
+                            onClick={() => setExpoVisible(true)}
+                        >
+                            <Badge colorScheme='purple'>{surfboards.length}</Badge>
+                            <Text pl='2'>surfboards compatible with you</Text>
+                        </Button>
+                    </Tooltip>
                 }
                 {expoVisible &&
                     <SurfboardsExpo

@@ -12,7 +12,7 @@ const renderProperty = (name: string, value: any) => {
     </HStack>
 }
 
-export default ({surfboard}: Props) => {
+const SurfboardDetail = ({surfboard}: Props) => {
     return (
         <Box maxW='xs' borderWidth='1px' borderRadius='lg' overflow='hidden'>
             <Image
@@ -30,8 +30,8 @@ export default ({surfboard}: Props) => {
             <Box m='2'>
                 {renderProperty('Volume (lt)', surfboard.volumeLiters)}
                 {renderProperty('Length (ft)', surfboard.lengthFeet)}
-                {renderProperty('Width (ft)', surfboard.widthFeet)}
-                {renderProperty('Thickness (ft)', surfboard.thicknessFeet)}
+                {/*{renderProperty('Width (ft)', surfboard.widthFeet)}*/}
+                {/*{renderProperty('Thickness (ft)', surfboard.thicknessFeet)}*/}
                 {renderProperty('Fins configuration', surfboard.finsConfiguration)}
             </Box>
             <Box m='2' color='gray.600' fontSize='sm'>
@@ -40,3 +40,4 @@ export default ({surfboard}: Props) => {
         </Box>
     )
 }
+export default SurfboardDetail;

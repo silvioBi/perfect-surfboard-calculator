@@ -5,7 +5,7 @@
 import {FitnessLevel, ShapeType, SkillLevel} from "../types/types";
 
 interface ShapeTypeBasedOnWaveHeightCm {
-    [height: string]:  {
+    [height: string]: {
         [key in SkillLevel]: ShapeType[];
     }
 }
@@ -16,39 +16,39 @@ interface ShapeTypeBasedOnWaveHeightCm {
 // https://www.stokedfortravel.com/surfboard-shapes-guide/
 export const SHAPE_TYPE_BASED_ON_WAVE_HEIGHT_CM: ShapeTypeBasedOnWaveHeightCm = {
     '30': {  // Ankle to knee
-        [SkillLevel.BEGINNER]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.LONGBOARD],
-        [SkillLevel.INTERMEDIATE]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.LONGBOARD],
-        [SkillLevel.INTERMEDIATE_ADVANCED]: [ShapeType.LONGBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG],
-        [SkillLevel.ADVANCED]: [ShapeType.LONGBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG, ShapeType.SHORTBOARD],
-        [SkillLevel.PRO]: [ShapeType.LONGBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG, ShapeType.SHORTBOARD],
+        [SkillLevel.BEGINNER]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.LONGBOARD, ShapeType.SUP],
+        [SkillLevel.INTERMEDIATE]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.LONGBOARD, ShapeType.SUP],
+        [SkillLevel.INTERMEDIATE_ADVANCED]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG],
+        [SkillLevel.ADVANCED]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG, ShapeType.SHORTBOARD],
+        [SkillLevel.PRO]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG, ShapeType.SHORTBOARD],
     },
     '60': {  // Knee to thigh
-        [SkillLevel.BEGINNER]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.LONGBOARD],
-        [SkillLevel.INTERMEDIATE]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.LONGBOARD, ShapeType.SHORTBOARD],
-        [SkillLevel.INTERMEDIATE_ADVANCED]: [ShapeType.LONGBOARD, ShapeType.FISH, ShapeType.FUNBOARD_MALIBU, ShapeType.EGG, ShapeType.SHORTBOARD],
-        [SkillLevel.ADVANCED]: [ShapeType.LONGBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG, ShapeType.SHORTBOARD],
-        [SkillLevel.PRO]: [ShapeType.LONGBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG, ShapeType.SHORTBOARD],
+        [SkillLevel.BEGINNER]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.LONGBOARD, ShapeType.SUP],
+        [SkillLevel.INTERMEDIATE]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.SHORTBOARD],
+        [SkillLevel.INTERMEDIATE_ADVANCED]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FISH, ShapeType.FUNBOARD_MALIBU, ShapeType.EGG, ShapeType.SHORTBOARD],
+        [SkillLevel.ADVANCED]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG, ShapeType.SHORTBOARD],
+        [SkillLevel.PRO]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG, ShapeType.SHORTBOARD],
     },
     '90': {  // Waist
-        [SkillLevel.BEGINNER]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.LONGBOARD],
-        [SkillLevel.INTERMEDIATE]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.LONGBOARD, ShapeType.SHORTBOARD],
-        [SkillLevel.INTERMEDIATE_ADVANCED]: [ShapeType.SHORTBOARD, ShapeType.LONGBOARD, ShapeType.FISH, ShapeType.FUNBOARD_MALIBU, ShapeType.EGG],
-        [SkillLevel.ADVANCED]: [ShapeType.LONGBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.SHORTBOARD, ShapeType.FISH, ShapeType.EGG],
-        [SkillLevel.PRO]: [ShapeType.LONGBOARD, ShapeType.SHORTBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG],
+        [SkillLevel.BEGINNER]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.LONGBOARD, ShapeType.SUP],
+        [SkillLevel.INTERMEDIATE]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.SHORTBOARD],
+        [SkillLevel.INTERMEDIATE_ADVANCED]: [ShapeType.SHORTBOARD, ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FISH, ShapeType.FUNBOARD_MALIBU, ShapeType.EGG],
+        [SkillLevel.ADVANCED]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FUNBOARD_MALIBU, ShapeType.SHORTBOARD, ShapeType.FISH, ShapeType.EGG],
+        [SkillLevel.PRO]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.SHORTBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG],
     },
     '120': {  // Chest
         [SkillLevel.BEGINNER]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU],
-        [SkillLevel.INTERMEDIATE]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.LONGBOARD, ShapeType.SHORTBOARD],
-        [SkillLevel.INTERMEDIATE_ADVANCED]: [ShapeType.SHORTBOARD, ShapeType.LONGBOARD, ShapeType.FISH, ShapeType.FUNBOARD_MALIBU, ShapeType.EGG],
-        [SkillLevel.ADVANCED]: [ShapeType.LONGBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.SHORTBOARD, ShapeType.FISH, ShapeType.EGG],
-        [SkillLevel.PRO]: [ShapeType.LONGBOARD, ShapeType.SHORTBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG],
+        [SkillLevel.INTERMEDIATE]: [ShapeType.EGG, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.SHORTBOARD],
+        [SkillLevel.INTERMEDIATE_ADVANCED]: [ShapeType.SHORTBOARD, ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FISH, ShapeType.FUNBOARD_MALIBU, ShapeType.EGG],
+        [SkillLevel.ADVANCED]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FUNBOARD_MALIBU, ShapeType.SHORTBOARD, ShapeType.FISH, ShapeType.EGG],
+        [SkillLevel.PRO]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.SHORTBOARD, ShapeType.FUNBOARD_MALIBU, ShapeType.FISH, ShapeType.EGG],
     },
     '150': {  // Head
         [SkillLevel.BEGINNER]: [],
-        [SkillLevel.INTERMEDIATE]: [ShapeType.FISH, ShapeType.LONGBOARD, ShapeType.SHORTBOARD],
-        [SkillLevel.INTERMEDIATE_ADVANCED]: [ShapeType.SHORTBOARD, ShapeType.LONGBOARD, ShapeType.FISH],
-        [SkillLevel.ADVANCED]: [ShapeType.LONGBOARD, ShapeType.SHORTBOARD, ShapeType.FISH],
-        [SkillLevel.PRO]: [ShapeType.SHORTBOARD, ShapeType.LONGBOARD, ShapeType.FISH],
+        [SkillLevel.INTERMEDIATE]: [ShapeType.FISH, ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.SHORTBOARD],
+        [SkillLevel.INTERMEDIATE_ADVANCED]: [ShapeType.SHORTBOARD, ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FISH],
+        [SkillLevel.ADVANCED]: [ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.SHORTBOARD, ShapeType.FISH],
+        [SkillLevel.PRO]: [ShapeType.SHORTBOARD, ShapeType.LONGBOARD, ShapeType.SUP, ShapeType.FISH],
     },
     '180': {  // 2x over head
         [SkillLevel.BEGINNER]: [],
@@ -377,8 +377,8 @@ type ShapeLengthFeetConversionTable = {
     [key in ShapeType]: {
         [key in SkillLevel]: {
             [weight: string]: {
-                min?: {feet: number, inches: number}
-                max?: {feet: number, inches: number}
+                min?: { feet: number, inches: number }
+                max?: { feet: number, inches: number }
             }
         }
     }

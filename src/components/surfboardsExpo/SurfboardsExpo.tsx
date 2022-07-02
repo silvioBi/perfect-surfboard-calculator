@@ -12,11 +12,13 @@ const SurfboardsExpo = ({surfboards, goBack}: Props) => {
     }
     return (
         <>
-            <Button left='6' marginTop='2' position='absolute' onClick={goBack}>
-                Go back
-            </Button>
-            <Wrap paddingTop='16' paddingBottom='16' spacing='8' justify='center'>
+            <Wrap padding='12' spacing='8' justify='center'>
                 {surfboards.map((surfboard, i) => <SurfboardDetail key={i} surfboard={surfboard}/>)}
+            </Wrap>
+            <Wrap paddingBottom='8' justify='center'>
+                <Button onClick={goBack}>
+                    ⏪ Go back
+                </Button>
             </Wrap>
         </>
     )

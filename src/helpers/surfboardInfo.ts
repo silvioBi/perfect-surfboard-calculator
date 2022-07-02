@@ -7,8 +7,8 @@ const getSurfboardImage = (shapeType: ShapeType) => {
         case ShapeType.FUNBOARD_MALIBU: return 'images/funboard.png';
         case ShapeType.FISH: return 'images/fish.jpg';
         case ShapeType.EGG: return 'images/egg.webp';
-        default:
-            return 'images/shortboard.jpg'; // TODO
+        case ShapeType.GUN: return 'images/gun.png';
+        case ShapeType.SUP: return 'images/sup.png';
     }
 }
 
