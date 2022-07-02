@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.1b2bc59f.js",
-    "index.html": "/index.html",
-    "main.1b2bc59f.js.map": "/static/js/main.1b2bc59f.js.map"
+    "main.js": "/perfect-surfboard-calculator/static/js/main.1b2bc59f.js",
+    "index.html": "/perfect-surfboard-calculator/index.html",
+    "main.1b2bc59f.js.map": "/perfect-surfboard-calculator/static/js/main.1b2bc59f.js.map"
   },
   "entrypoints": [
     "static/js/main.1b2bc59f.js"
