@@ -51,7 +51,7 @@ export default ({handleChange}: Props) => {
         fitnessLevel: fitnessLevelLocalStorage,
         skillLevel: skillLevelLocalStorage,
         waveHeight: waveHeightLocalStorage,
-    } = JSON.parse(window.localStorage.getItem('SURFBOARD_CALCULATOR_STATE') ?? '') ?? {};
+    } = JSON.parse(window.localStorage.getItem('SURFBOARD_CALCULATOR_STATE') ?? '{}') ?? {};
 
     const [age, setAge] = React.useState<Age>(ageLocalStorage ?? Age.FROM_TWENTY_TILL_TWENTYNINE)
 
