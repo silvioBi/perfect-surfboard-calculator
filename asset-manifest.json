@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/perfect-surfboard-calculator/static/js/main.1b2bc59f.js",
+    "main.js": "/perfect-surfboard-calculator/static/js/main.e3ee8c9c.js",
     "index.html": "/perfect-surfboard-calculator/index.html",
-    "main.1b2bc59f.js.map": "/perfect-surfboard-calculator/static/js/main.1b2bc59f.js.map"
+    "main.e3ee8c9c.js.map": "/perfect-surfboard-calculator/static/js/main.e3ee8c9c.js.map"
   },
   "entrypoints": [
-    "static/js/main.1b2bc59f.js"
+    "static/js/main.e3ee8c9c.js"
   ]
 }
