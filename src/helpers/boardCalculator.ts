@@ -1,4 +1,4 @@
-import {Age, FinsConfiguration, FitnessLevel, ShapeType, SkillLevel, Surfboard, Surfer} from "../types/types";
+import { FinsConfiguration, ShapeType, Surfboard, Surfer} from "../types/types";
 import {
     AGE_VOLUME_FACTOR, FITNESS_VOLUME_FACTOR, SHAPE_LEGTH_FEET_BASED_ON_SURFER_WEIGHT,
     SHAPE_TYPE_BASED_ON_WAVE_HEIGHT_CM,
@@ -49,7 +49,7 @@ const getIdealSurfboardLengthHumanReadable = (surfer: Surfer, shape: ShapeType):
         return `+ ${rmin?.feet}" ${rmin?.inches}'`
     if (!rmin && rmax)
         return `- ${rmax?.feet}" ${rmax?.inches}'`
-    if (rmin?.feet == rmax?.feet && rmin?.inches == rmax?.inches)
+    if (rmin?.feet === rmax?.feet && rmin?.inches === rmax?.inches)
         return `${rmax?.feet}" ${rmax?.inches}'`
     return `${rmin?.feet}" ${rmin?.inches}' - ${rmax?.feet}" ${rmax?.inches}'`
 }

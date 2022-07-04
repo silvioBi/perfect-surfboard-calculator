@@ -1,5 +1,5 @@
 import {Surfboard} from "../../types/types";
-import {Button, Flex, Wrap} from "@chakra-ui/react";
+import {Button, Wrap} from "@chakra-ui/react";
 import SurfboardDetail from "../surfboardDetail/SurfboardDetail";
 
 type Props = {

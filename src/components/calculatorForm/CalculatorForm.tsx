@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {
-    Text,
     FormControl,
     FormLabel, Heading, NumberDecrementStepper,
     NumberIncrementStepper,
@@ -11,7 +10,7 @@ import {
     Tooltip,
     VStack
 } from "@chakra-ui/react";
-import {Age, FitnessLevel, SkillLevel, Surfboard} from "../../types/types";
+import {Age, FitnessLevel, SkillLevel} from "../../types/types";
 
 type Props = {
     handleChange: (
@@ -43,7 +42,7 @@ const SKILL_LEVEL_TOOLTIP_TEXT = <div>
     </ul>
 </div>;
 
-export default ({handleChange}: Props) => {
+const CalculatorForm = ({handleChange}: Props) => {
     const {
         age: ageLocalStorage,
         height: heightLocalStorage,
@@ -84,7 +83,7 @@ export default ({handleChange}: Props) => {
             skillLevel,
             waveHeight,
         )
-    }, [age, height, weight, fitnessLevel, skillLevel, waveHeight]);
+    }, [age, height, weight, fitnessLevel, skillLevel, waveHeight]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <>
@@ -183,3 +182,5 @@ export default ({handleChange}: Props) => {
         </>
     );
 }
+
+export default CalculatorForm;

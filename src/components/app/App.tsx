@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Badge, Button, Text, Flex, Heading, VStack, Tooltip} from '@chakra-ui/react';
+import {Badge, Button, Text, Flex, VStack, Tooltip} from '@chakra-ui/react';
 import CalculatorForm from "../calculatorForm/CalculatorForm";
 import {Age, FitnessLevel, SkillLevel, Surfboard} from "../../types/types";
 import {calculatePerfectBoards} from "../../helpers/boardCalculator";
