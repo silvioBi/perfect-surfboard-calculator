@@ -34,9 +34,10 @@ const SurfboardDetail = ({ surfboard }: Props) => {
       <Box m="2">
         {renderProperty("Volume (lt)", surfboard.volumeLiters)}
         {renderProperty("Length (ft)", surfboard.lengthFeet)}
+        {/* TODO one day maybe */}
         {/*{renderProperty('Width (ft)', surfboard.widthFeet)}*/}
         {/*{renderProperty('Thickness (ft)', surfboard.thicknessFeet)}*/}
-        {renderProperty("Fins configuration", surfboard.finsConfiguration)}
+        {/*{renderProperty("Fins configuration", surfboard.finsConfiguration)}*/}
       </Box>
       <Box m="2" color="gray.600" fontSize="sm">
         {getSurfboardDescription(surfboard.shapeType)}

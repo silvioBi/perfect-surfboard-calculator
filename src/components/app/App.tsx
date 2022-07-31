@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Badge, Button, Text, Flex, VStack, Tooltip } from "@chakra-ui/react";
+import { Badge, Button, Flex, Text, VStack } from "@chakra-ui/react";
 import CalculatorForm from "../calculatorForm/CalculatorForm";
 import { Age, FitnessLevel, SkillLevel, Surfboard } from "../../types/types";
 import { calculatePerfectBoards } from "../../helpers/boardCalculator";
 import SurfboardsExpo from "../surfboardsExpo/SurfboardsExpo";
 import Footer from "../footer/Footer";
+import TouchFriendlyTooltip from "../touchFriendlyTooltip/TouchFriendlyTooltip";
 
 const showSurfboardsButtonText =
   "Unfortunately we could not find any surfboard matching your criteria, change the values and try again and if you think is an error please drop me a email: biasiol.silvio@gmail.com";
@@ -44,7 +45,7 @@ function App() {
       <VStack padding={4}>
         {!expoVisible && <CalculatorForm handleChange={handleChange} />}
         {!expoVisible && (
-          <Tooltip
+          <TouchFriendlyTooltip
             placement="top"
             shouldWrapChildren
             label={showSurfboardsButtonText}
@@ -57,7 +58,7 @@ function App() {
               <Badge colorScheme="purple">{surfboards.length}</Badge>
               <Text pl="2">surfboards compatible with you</Text>
             </Button>
-          </Tooltip>
+          </TouchFriendlyTooltip>
         )}
         {expoVisible && (
           <SurfboardsExpo

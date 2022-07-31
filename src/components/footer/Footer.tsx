@@ -26,7 +26,7 @@ const Footer = () => {
           textDecoration="underline"
           href="https://www.buymeacoffee.com/silvioBi"
         >
-          support it with a donation
+          buy me a coffe ☕️
         </Link>
       </Text>
     </Flex>

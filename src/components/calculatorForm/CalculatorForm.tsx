@@ -11,10 +11,10 @@ import {
   NumberInputField,
   NumberInputStepper,
   Select,
-  Tooltip,
   VStack,
 } from "@chakra-ui/react";
 import { Age, FitnessLevel, SkillLevel } from "../../types/types";
+import TouchFriendlyTooltip from "../touchFriendlyTooltip/TouchFriendlyTooltip";
 
 type Props = {
   handleChange: (
@@ -200,13 +200,13 @@ const CalculatorForm = ({ handleChange }: Props) => {
         <FormControl>
           <FormLabel htmlFor="fitnessLevel">
             🏋🏼 What's your fitness level?
-            <Tooltip
+            <TouchFriendlyTooltip
               fontSize="xs"
               label={FITNESS_LEVEL_TOOLTIP_TEXT}
               aria-label="A tooltip"
             >
               &nbsp;ℹ️
-            </Tooltip>
+            </TouchFriendlyTooltip>
           </FormLabel>
           <Select
             id="fitnessLevel"
@@ -227,14 +227,14 @@ const CalculatorForm = ({ handleChange }: Props) => {
         <FormControl>
           <FormLabel htmlFor="skillLevel">
             🏄🏼‍ How good are you at surfing?
-            <Tooltip
+            <TouchFriendlyTooltip
               placement="top"
               fontSize="xs"
               label={SKILL_LEVEL_TOOLTIP_TEXT}
               aria-label="A tooltip"
             >
               &nbsp;ℹ️
-            </Tooltip>
+            </TouchFriendlyTooltip>
           </FormLabel>
           <Select
             id="skillLevel"
